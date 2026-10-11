@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env / secrets - never commit API keys or tokens
+.env
+*.env
+*.key
+
+# Personal material - the repo is PUBLIC: no voice samples, no face caricature
+skills/**/assets/ref_voice.*
+skills/**/assets/character_01.jpg
+
+# OS
+.DS_Store
+Thumbs.db
