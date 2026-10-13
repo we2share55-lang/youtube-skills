@@ -125,6 +125,8 @@ def main():
         config=types.GenerateContentConfig(response_mime_type="application/json"),
     )
     plan = json.loads(resp.text)
+    if isinstance(plan, list):  # model sometimes returns the bare episode list
+        plan = {"episodes": plan[0]["episodes"] if plan and "episodes" in plan[0] else plan}
     plan["source_url"] = a.url
     plan["source_channel"] = channel
     plan["source_title"] = title
